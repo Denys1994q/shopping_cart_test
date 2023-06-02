@@ -1,4 +1,7 @@
+@import '../../styles/mixins/mixins.sass'
+
 .cardsPanel
+    margin-top: 7rem
     &__title
         font-size: 2.4rem
         font-weight: bold
@@ -11,11 +14,12 @@
     &__products
         padding: 1rem
         width: 80%
-        // flex-grow: 1
 
 // 
 .stores
     margin-right: 5rem
+    @include respond(phoneL)
+        margin-right: 1rem
     &__list
         display: flex
         flex-direction: column
@@ -23,13 +27,11 @@
     &__item
         padding: .5rem
         cursor: pointer
-        // border: 2px solid white
         transition: all .4s ease-in-out
         &:hover
             transform: scale(1.07)
         &-active
             transform: scale(1.07)
-            // border: 2px solid #33ad44
     &__title
         font-weight: bold
         font-size: 1.6rem
@@ -40,6 +42,7 @@
         display: flex
         flex-wrap: wrap
         gap: 2rem
+        margin-bottom: 1rem
     &__item
         width: 20rem
         border: 1px solid #e4e4e4
@@ -47,10 +50,13 @@
         padding: 1rem
         display: flex
         flex-direction: column
+        @include respond(phoneL)
+            width: 16rem
     &__image
         margin-top: auto
         width: 8rem
         height: 8rem
+        margin-bottom: .5rem
         img
             width: 8rem
             height: 8rem
@@ -58,6 +64,8 @@
     &__title
         font-size: 2rem
         margin-bottom: 1rem
+        @include respond(phoneL)
+            font-size: 1.6rem
     &__pricePanel
         display: flex
         justify-content: space-between

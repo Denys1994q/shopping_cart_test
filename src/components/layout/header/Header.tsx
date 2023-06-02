@@ -2,8 +2,11 @@ import "./Header.sass";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux/es/exports";
 
 const Header = () => {
+    const order = useSelector((state: any) => state.ShopSlice.order)
+
     return (
         <header className='header'>
             <Link to='/'>
@@ -11,7 +14,7 @@ const Header = () => {
             </Link>
             <Link to='/cart'>
                 <Badge
-                    badgeContent={1}
+                    badgeContent={order.length}
                     color='success'
                     sx={{ "& .MuiBadge-badge": { fontSize: 14 } }}
                     anchorOrigin={{
